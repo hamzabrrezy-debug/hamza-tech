@@ -65,6 +65,35 @@ nav a{margin-left:8px;font-size:13px}
 .light p {
   color: #475569;
 }
+#contactForm {
+  max-width: 450px;
+  margin: 30px auto;
+}
+
+#contactForm input,
+#contactForm textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  background: #172338;
+  color: white;
+  font-size: 16px;
+}
+
+#contactForm textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+#contactForm button {
+  width: 100%;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+  outline: 2px solid #38bdf8;
+}
   </style>
 </head>
 <body>
@@ -89,17 +118,39 @@ Explore Now
 <h2>About Hamza Tech</h2>
 <p>My journey into Web Development and Cloud Computing starts here.</p>
 </section>
-
 <section id="contact">
-<h2>Contact</h2>
-<p>More exciting projects coming soon.</p>
-</section>
+  <h2>Contact Us</h2>
+  <p>Get in touch with Hamza Tech.</p>
 
+  <form id="contactForm">
+    <input type="text" placeholder="Your Name" required>
+    <br><br>
+
+    <input type="email" placeholder="Your Email" required>
+    <br><br>
+
+    <textarea placeholder="Your Message" required></textarea>
+    <br><br>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
 <footer>© 2026 Hamza Tech. All rights reserved.</footer>
 <script>
 function toggleMode() {
   document.body.classList.toggle("light");
 }
+</script>
+<script>
+const form = document.getElementById("contactForm");
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  alert("Thank you! Your message is ready.");
+
+  form.reset();
+});
 </script>
 </body>
 </html>
